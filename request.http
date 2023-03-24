@@ -1,0 +1,15 @@
+### GET 
+GET http://localhost:3000/
+
+### GET all pets 
+GET http://localhost:3000/pets
+
+### GET first pet 
+GET http://localhost:3000/pets/0
+
+### too high not found 
+GET http://localhost:3000/pets/10
+
+### too low not found 
+GET http://localhost:3000/pets/-1
+
