@@ -15,8 +15,8 @@ switch (option) {
             // this is giving an array that's all a string. you need to parse it. 
             // JSON.parse() is synchronous (one step at a time) so we can do this method:
             let pets = JSON.parse(data)
-            //console.log(data)
-            if (optIndex === undefined) {
+            // console.log(data)
+            if (optIndex !== undefined) {
                 console.log(pets[optIndex]);
             } else if (optIndex < 0 || optIndex >= pets.length - 1) {
                 console.error(`Usage: node pets.js read INDEX`)

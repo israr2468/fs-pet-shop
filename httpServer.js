@@ -23,7 +23,12 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   } else if (req.method === 'GET' && petRegExp.test(req.url)) {
+    // test() method tests for a match in a string.
+    // If it finds a match, it returns true, otherwise it returns false.
     const index = Number(req.url.match(petRegExp)[1]);
+    // index 1 for regex 
+    // .match() is used to search a string, for a match, against a regular expression.
+    // in this case we want to convert that stirng into a number
     fs.readFile(petsPath, 'utf-8', (err, petsJSON) => {
       if (err) {
         res.writeHead(404, { 'Content-Type': 'text/plain' });

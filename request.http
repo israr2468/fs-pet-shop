@@ -1,15 +1,51 @@
-### GET 
+### GET 404
 GET http://localhost:3000/
 
+### GET blah 404
+GET http://localhost:3000/blah
+
 ### GET all pets 
-GET http://localhost:3000/pets
+GET http://localhost:3000/api/pets
 
 ### GET first pet 
-GET http://localhost:3000/pets/0
+GET http://localhost:3000/api/pets/1
+
+### GET third pet 
+GET http://localhost:3000/api/pets/3
 
 ### too high not found 
-GET http://localhost:3000/pets/10
+GET http://localhost:3000/api/pets/10
 
 ### too low not found 
-GET http://localhost:3000/pets/-1
+GET http://localhost:3000/api/pets/-1
 
+### POST 
+POST http://localhost:3000/api/pets
+Content-Type: application/json
+
+{
+    "age":6,
+    "kind":"wolf",
+    "name":"jack"
+}
+
+### PATCH // only send what you want to 
+PATCH http://localhost:3000/api/pets/1
+Content-Type: application/json
+
+{
+    "kind":"turtle"
+}
+
+### PUT // have to send the entire body even though you only want to change one piece 
+PUT http://localhost:3000/pets/1
+Content-Type: application/json
+
+{
+    "age":2,
+    "kind":"lion",
+    "name":"jeff"
+}
+
+### DELETE 
+DELETE http://localhost:3000/api/pets/5
